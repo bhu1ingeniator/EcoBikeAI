@@ -1,0 +1,362 @@
+region,brand,model,year,category,engine_cc,power_hp,mileage_kmpl,fuel_type,transmission,weight_kg,fuel_tank_l,price,currency,co2_g_km,co2_source
+INDIA,Royal Enfield,Himalayan,,Premium/Cruiser,411.0,,45.0,Petrol,,191,,210784,INR,51.3,ESTIMATED
+INDIA,Royal Enfield,Classic Chrome,,Premium/Cruiser,499.0,,27.0,Petrol,,194,,188868,INR,85.6,ESTIMATED
+INDIA,Royal Enfield,Meteor 350,,Premium/Cruiser,349.0,,41.88,Petrol,,183,,205844,INR,55.2,ESTIMATED
+INDIA,Royal Enfield,Bullet 350,,Premium/Cruiser,346.0,,45.0,Petrol,,183,,127094,INR,51.3,ESTIMATED
+INDIA,Hero,Splendor +,,Commuter,97.2,,70.0,Petrol,,110,,69380,INR,33.0,ESTIMATED
+INDIA,Honda,CB Shine,,Commuter,124.7,,65.0,Petrol,,114,,72787,INR,35.5,ESTIMATED
+INDIA,Honda,Activa 6G,,Scooter,109.5,,45.0,Petrol,,107,,69645,INR,51.3,ESTIMATED
+INDIA,Royal Enfield,Classic 350,,Premium/Cruiser,349.0,,37.0,Petrol,,195,,184374,INR,62.4,ESTIMATED
+INDIA,Yamaha,MT-15,,Street/Sport,155.0,,48.0,Petrol,,138,,144900,INR,48.1,ESTIMATED
+INDIA,Honda,Dio,,Scooter,109.5,,55.0,Petrol,,103,5.3,64510,INR,42.0,ESTIMATED
+INDIA,Honda,SP 125,,Commuter,124.0,,65.0,Petrol,,117,,78381,INR,35.5,ESTIMATED
+INDIA,Hero,HF Deluxe,,Commuter,97.2,,83.0,Petrol,,109,,48950,INR,27.8,ESTIMATED
+INDIA,Bajaj,Pulsar 150,,Street/Sport,149.5,,65.0,Petrol,,144,,95872,INR,35.5,ESTIMATED
+INDIA,Hero,Super Splendor,,Commuter,124.7,,60.0,Petrol,5 Speed Manual,123,12.0,73900,INR,38.5,ESTIMATED
+INDIA,Bajaj,Pulsar 125,,Commuter,124.4,,62.0,Petrol,,140,,72122,INR,37.3,ESTIMATED
+INDIA,Yamaha,FZ S V3.0 FI,,Street/Sport,149.0,,45.0,Petrol,,135,,115900,INR,51.3,ESTIMATED
+INDIA,Bajaj,Pulsar 220,,Street/Sport,220.0,,40.0,Petrol,,155,,123245,INR,57.8,ESTIMATED
+INDIA,Bajaj,Pulsar NS 125,,Commuter,124.4,,,Petrol,,144,,93818,INR,,ESTIMATED
+INDIA,Hero,Passion Pro i3S,,Commuter,113.2,,84.0,Petrol,,117,,67400,INR,27.5,ESTIMATED
+INDIA,KTM,RC 125,,Commuter,124.7,,41.3,Petrol,,135,,180538,INR,55.9,ESTIMATED
+INDIA,Honda,CB Unicorn 160,,Street/Sport,162.7,,62.0,Petrol,,134,,98931,INR,37.3,ESTIMATED
+INDIA,Yamaha,MT-15 V2.0,,Street/Sport,155.0,,48.0,Petrol,,139,,160900,INR,48.1,ESTIMATED
+INDIA,Yamaha,R15 V3.0,,Street/Sport,155.0,,30.0,Petrol,,142,,157600,INR,77.0,ESTIMATED
+INDIA,Hero,Pleasure + 110,,Scooter,110.9,,69.0,Petrol,,104,,61900,INR,33.5,ESTIMATED
+INDIA,Hero,HF Deluxe i3s,,Commuter,97.2,,88.5,Petrol,,110,,59800,INR,26.1,ESTIMATED
+INDIA,Hero,Xtreme 160R,,Street/Sport,163.0,,55.0,Petrol,,139,,111610,INR,42.0,ESTIMATED
+INDIA,Hero,Glamour 125,,Commuter,124.7,,60.0,Petrol,,126,,74900,INR,38.5,ESTIMATED
+INDIA,Hero,XPulse 200 4V,,Street/Sport,199.6,,,Petrol,5 Speed Manual,158,13.0,130150,INR,,ESTIMATED
+INDIA,Hero,Maestro Edge,,Scooter,110.9,,65.0,Petrol,,112,,65900,INR,35.5,ESTIMATED
+INDIA,Royal Enfield,Continental GT 650,,Premium/Cruiser,648.0,,25.5,Petrol,,198,,298079,INR,90.6,ESTIMATED
+INDIA,Revolt,RV400,,,,,150.0,Petrol,,108,,129463,INR,15.4,ESTIMATED
+INDIA,Hero,Splendor Pro,,Commuter,97.2,,65.0,Petrol,,112,,49598,INR,35.5,ESTIMATED
+INDIA,Royal Enfield,Scram 411,,Premium/Cruiser,411.0,,,Petrol,,185,,203000,INR,,ESTIMATED
+INDIA,Kawasaki,Ninja H2R,,Premium/Cruiser,998.0,,15.0,Petrol,,216,,7990000,INR,154.0,ESTIMATED
+INDIA,Hero,Xtreme 200S,,Street/Sport,199.6,,36.9,Petrol,,155,,120214,INR,62.6,ESTIMATED
+INDIA,Hero,Splendor iSmart,,Commuter,113.2,,75.0,Petrol,,116,,65950,INR,30.8,ESTIMATED
+INDIA,Hero,XPulse 200,,Street/Sport,199.6,,42.0,Petrol,,157,,118230,INR,55.0,ESTIMATED
+INDIA,TVS,XL 100,,Commuter,99.7,,67.0,Petrol,,88,,40990,INR,34.5,ESTIMATED
+INDIA,Hero,XPulse 200T,,Street/Sport,199.6,,43.0,Petrol,,154,,115800,INR,53.7,ESTIMATED
+INDIA,Royal Enfield,Interceptor 650,,Premium/Cruiser,648.0,,25.5,Petrol,,202,,281518,INR,90.6,ESTIMATED
+INDIA,Hero,Maestro Edge 125,,Scooter,124.6,,49.0,Petrol,,110,,73450,INR,47.1,ESTIMATED
+INDIA,TVS,Raider,,Commuter,124.8,,67.0,Petrol,,123,,84573,INR,34.5,ESTIMATED
+INDIA,Yamaha,YZF R15 V4.0,,Street/Sport,155.0,,45.0,Petrol,,142,,170800,INR,51.3,ESTIMATED
+INDIA,Yamaha,YZF R1,,Premium/Cruiser,998.0,,20.0,Petrol,,200,,2039233,INR,115.5,ESTIMATED
+INDIA,Honda,CD 110 Dream,,Commuter,109.5,,74.0,Petrol,,109,,65248,INR,31.2,ESTIMATED
+INDIA,Bajaj,Platina 110,,Commuter,115.0,,80.0,Petrol,,108,,65930,INR,28.9,ESTIMATED
+INDIA,Bajaj,Pulsar 200 NS,,Street/Sport,199.5,,35.0,Petrol,,152,,131219,INR,66.0,ESTIMATED
+INDIA,TVS,Apache RTR 160,,Street/Sport,159.7,,48.0,Petrol,,139,,112940,INR,48.1,ESTIMATED
+INDIA,Honda,Hornet 2.0,,Street/Sport,184.4,,40.0,Petrol,5 Speed Manual,142,12.0,132238,INR,57.8,ESTIMATED
+INDIA,KTM,RC 200,,Street/Sport,199.5,,35.0,Petrol,,151,,213000,INR,66.0,ESTIMATED
+INDIA,Bajaj,Platina 100,,Commuter,102.0,,96.9,Petrol,4 Speed Manual,117,11.0,52915,INR,23.8,ESTIMATED
+INDIA,Suzuki,Gixxer SF,,Street/Sport,154.9,,47.0,Petrol,5 Speed Manual,146,12.0,129300,INR,49.1,ESTIMATED
+INDIA,TVS,Jupiter,,Scooter,109.7,,62.0,Petrol,,109,,70085,INR,37.3,ESTIMATED
+INDIA,Yamaha,Aerox 155,,Street/Sport,155.0,,,Petrol,,122,,129000,INR,,ESTIMATED
+INDIA,Bajaj,Avenger Cruise 220,,Street/Sport,220.0,,40.0,Petrol,,159,,122630,INR,57.8,ESTIMATED
+INDIA,Honda,Livo,,Commuter,109.5,,74.0,Petrol,,115,,70799,INR,31.2,ESTIMATED
+INDIA,Kawasaki,Ninja 300,,Premium/Cruiser,296.0,,26.0,Petrol,,179,,337000,INR,88.8,ESTIMATED
+INDIA,TVS,Ntorq 125,,Scooter,124.8,,60.0,Petrol,,118,,77106,INR,38.5,ESTIMATED
+INDIA,Yamaha,FZ 25,,Street/Sport,249.0,,43.0,Petrol,,153,,134800,INR,53.7,ESTIMATED
+INDIA,Honda,X-Blade,,Street/Sport,162.7,,45.0,Petrol,,143,,111895,INR,51.3,ESTIMATED
+INDIA,Suzuki,V-Strom SX 250,,Street/Sport,249.0,,,Petrol,,167,,211600,INR,,ESTIMATED
+INDIA,Honda,Activa 125 FI,,Scooter,124.0,,45.0,Petrol,,111,,72637,INR,51.3,ESTIMATED
+INDIA,Bajaj,CT 100,,Commuter,102.0,,89.5,Petrol,,114,,40794,INR,25.8,ESTIMATED
+INDIA,Hero,HF 100,,Commuter,97.2,,70.0,Petrol,,110,,49400,INR,33.0,ESTIMATED
+INDIA,Suzuki,New Access 125,,Scooter,124.0,,64.0,Petrol,,103,,72600,INR,36.1,ESTIMATED
+INDIA,Bajaj,Pulsar NS160,,Street/Sport,160.3,,45.0,Petrol,,151,,110086,INR,51.3,ESTIMATED
+INDIA,KTM,RC 390,,Premium/Cruiser,373.2,,35.0,Petrol,,147,,314000,INR,66.0,ESTIMATED
+INDIA,Hero Electric,Optima HX,,,,,82.0,Petrol,,73,,55580,INR,28.2,ESTIMATED
+INDIA,Jawa,Forty Two,,Premium/Cruiser,293.0,,37.5,Petrol,,170,,171415,INR,61.6,ESTIMATED
+INDIA,Yamaha,Fascino 125,,Scooter,125.0,,66.0,Petrol,,99,,70000,INR,35.0,ESTIMATED
+INDIA,Bajaj,Pulsar 180,,Street/Sport,178.6,,45.0,Petrol,,151,,108000,INR,51.3,ESTIMATED
+INDIA,Hero,Destini 125,,Scooter,124.6,,54.0,Petrol,,113,,67990,INR,42.8,ESTIMATED
+INDIA,Honda,CB 350 RS,,Premium/Cruiser,348.4,,35.0,Petrol,,179,,196006,INR,66.0,ESTIMATED
+INDIA,KTM,250 Duke,,Street/Sport,248.8,,30.0,Petrol,,169,,228736,INR,77.0,ESTIMATED
+INDIA,TVS,Apache RTR 160 4V,,Street/Sport,159.7,,30.0,Petrol,,145,,111565,INR,77.0,ESTIMATED
+INDIA,BMW,G 310 R,,Premium/Cruiser,313.0,,30.0,Petrol,,158,,250000,INR,77.0,ESTIMATED
+INDIA,Revolt,RV300,,,,,180.0,Petrol,,101,,114264,INR,12.8,ESTIMATED
+INDIA,Yamaha,Ray-ZR 125FI,,Scooter,125.0,,66.0,Petrol,,99,,73330,INR,35.0,ESTIMATED
+INDIA,TVS,Radeon,,Commuter,109.7,,69.0,Petrol,,116,,59942,INR,33.5,ESTIMATED
+INDIA,Suzuki,Hayabusa,,Premium/Cruiser,1340.0,,11.0,Petrol,,266,,1640000,INR,210.0,ESTIMATED
+INDIA,Ather,450,,Scooter,,,100.0,Petrol,,108,,118995,INR,23.1,ESTIMATED
+INDIA,KTM,390 Duke,,Premium/Cruiser,373.2,,35.0,Petrol,,167,,287545,INR,66.0,ESTIMATED
+INDIA,Yamaha,MT-09,,Premium/Cruiser,847.0,,19.0,Petrol,6 Speed Manual,193,,1055354,INR,121.6,ESTIMATED
+INDIA,TVS,Sport,,Commuter,109.7,,76.4,Petrol,4 Speed Manual,110,10.0,52500,INR,30.2,ESTIMATED
+INDIA,TVS,iQube,,,,,75.0,Petrol,,118,,166358,INR,30.8,ESTIMATED
+INDIA,Bajaj,Pulsar N250,,Street/Sport,249.1,,,Petrol,5 Speed Manual,162,14.0,138000,INR,,ESTIMATED
+INDIA,Benelli,TNT 600i,,Premium/Cruiser,600.0,,19.0,Petrol,,231,,620000,INR,121.6,ESTIMATED
+INDIA,Honda,CBR 1000RR,,Premium/Cruiser,999.0,,18.0,Petrol,,195,,1643309,INR,128.3,ESTIMATED
+INDIA,Yezdi,Roadster,,Premium/Cruiser,334.0,,,Petrol,,184,,198142,INR,,ESTIMATED
+INDIA,Suzuki,Avenis,,Commuter,124.3,,55.0,Petrol,,106,,86500,INR,42.0,ESTIMATED
+INDIA,TVS,Scooty Pep +,,Scooter,87.8,,65.0,Petrol,,95,,52554,INR,35.5,ESTIMATED
+INDIA,TVS,Apache RR 310,,Premium/Cruiser,312.2,,30.0,Petrol,,170,,259000,INR,77.0,ESTIMATED
+INDIA,Ola,Electric S1,,Scooter,,,181.0,Petrol,,121,,85099,INR,12.8,ESTIMATED
+INDIA,KTM,200 Duke,,Street/Sport,199.5,,35.0,Petrol,,159,,190000,INR,66.0,ESTIMATED
+INDIA,Suzuki,Gixxer SF 250,,Street/Sport,249.0,,38.5,Petrol,,161,,181900,INR,60.0,ESTIMATED
+INDIA,Kawasaki,Ninja ZX-10R,,Premium/Cruiser,998.0,,15.0,Petrol,,206,,1537000,INR,154.0,ESTIMATED
+INDIA,BMW,S 1000 RR,,Premium/Cruiser,999.0,,17.0,Petrol,,197,,1950000,INR,135.9,ESTIMATED
+INDIA,Suzuki,Burgman,,Scooter,124.0,,53.5,Petrol,,110,,84300,INR,43.2,ESTIMATED
+INDIA,Tork,Motors Kratos,,,,,120.0,Petrol,,120,,102499,INR,19.2,ESTIMATED
+INDIA,Bajaj,Dominar 250,,Street/Sport,248.8,,35.0,Petrol,6 Speed Manual,180,13.0,154176,INR,66.0,ESTIMATED
+INDIA,TVS,Star City +,,Commuter,109.7,,86.0,Petrol,,116,,65865,INR,26.9,ESTIMATED
+INDIA,TVS,Apache RTR 180,,Street/Sport,177.4,,47.0,Petrol,,139,,103950,INR,49.1,ESTIMATED
+INDIA,Bajaj,CT 110,,Commuter,115.0,,104.0,Petrol,,117,,46413,INR,22.2,ESTIMATED
+INDIA,Yamaha,FZ-X,,Street/Sport,149.0,,,Petrol,,139,,116800,INR,,ESTIMATED
+INDIA,Bajaj,Avenger Street 160,,Street/Sport,160.3,,45.0,Petrol,,156,,101094,INR,51.3,ESTIMATED
+INDIA,Hero Electric,Photon HX,,,,,108.0,Petrol,,87,,74240,INR,21.4,ESTIMATED
+INDIA,Kawasaki,Ninja 650,,Premium/Cruiser,649.0,,21.0,Petrol,,196,,668000,INR,110.0,ESTIMATED
+INDIA,TVS,Victor,,Commuter,109.7,,72.0,Petrol,,112,,54042,INR,32.1,ESTIMATED
+INDIA,Atumobile,Atum 1.0,,,,,100.0,Petrol,,108,,50000,INR,23.1,ESTIMATED
+INDIA,Honda,Grazia,,Commuter,124.0,,54.0,Petrol,,107,,82566,INR,42.8,ESTIMATED
+INDIA,Bajaj,Chetak,,Scooter,,,95.0,Petrol,,100,,100000,INR,24.3,ESTIMATED
+INDIA,Okinawa,Praise,,,,,170.0,Petrol,,96,,71990,INR,13.6,ESTIMATED
+INDIA,Oben,Electric Rorr,,,,,200.0,Petrol,,120,,102999,INR,11.6,ESTIMATED
+INDIA,Bajaj,Avenger Street 220,,Street/Sport,220.0,,45.0,Petrol,,150,,103891,INR,51.3,ESTIMATED
+INDIA,Jawa,Perak,,Premium/Cruiser,334.0,,35.0,Petrol,,175,,208187,INR,66.0,ESTIMATED
+INDIA,Bajaj,Pulsar RS 200,,Street/Sport,199.5,,35.0,Petrol,,165,,152179,INR,66.0,ESTIMATED
+INDIA,Piaggio,Vespa,,Scooter,125.0,,45.0,Petrol,,114,,91492,INR,51.3,ESTIMATED
+INDIA,BMW,R 1250 GS,,Premium/Cruiser,1254.0,,21.0,Petrol,,249,,2045000,INR,110.0,ESTIMATED
+INDIA,Suzuki,Intruder,,Street/Sport,154.9,,44.0,Petrol,,152,,126500,INR,52.5,ESTIMATED
+INDIA,KTM,125 Duke,,Commuter,124.7,,34.5,Petrol,6 Speed Manual,148,13.4,176000,INR,67.0,ESTIMATED
+INDIA,Honda,Gold Wing,,Premium/Cruiser,1833.0,,14.0,Petrol,,390,,3971822,INR,165.0,ESTIMATED
+INDIA,TVS,Jupiter 125,,Scooter,124.8,,50.0,Petrol,,109,5.1,73400,INR,46.2,ESTIMATED
+INDIA,Suzuki,Gixxer,,Street/Sport,154.9,,64.0,Petrol,,140,,118800,INR,36.1,ESTIMATED
+INDIA,Aprilia,SR 150,,Street/Sport,154.8,,40.0,Petrol,,122,,75733,INR,57.8,ESTIMATED
+INDIA,Honda,CB200X,,Street/Sport,184.4,,,Petrol,,147,,144500,INR,,ESTIMATED
+INDIA,Husqvarna,Svartpilen 250,,Street/Sport,248.8,,35.0,Petrol,,154,,218000,INR,66.0,ESTIMATED
+INDIA,TVS,Scooty Zest 110,,Scooter,109.7,,62.0,Petrol,,97,,59925,INR,37.3,ESTIMATED
+INDIA,Yamaha,R15S V3.0,,Street/Sport,155.0,,,Petrol,,142,,158939,INR,,ESTIMATED
+INDIA,Kawasaki,Ninja 400,,Premium/Cruiser,399.0,,25.0,Petrol,,173,,499000,INR,92.4,ESTIMATED
+INDIA,Kawasaki,Z900,,Premium/Cruiser,948.0,,15.0,Petrol,,208,,850000,INR,154.0,ESTIMATED
+INDIA,Kawasaki,Ninja 1000,,Premium/Cruiser,1043.0,,17.0,Petrol,,238,,1151000,INR,135.9,ESTIMATED
+INDIA,Yamaha,FZ V3.0 FI,,Street/Sport,149.0,,45.0,Petrol,,137,,99200,INR,51.3,ESTIMATED
+INDIA,Honda,H Ness CB 350,,Premium/Cruiser,348.4,,42.0,Petrol,,181,,196239,INR,55.0,ESTIMATED
+INDIA,Indian,Scout Bobber,,Premium/Cruiser,1133.0,,14.0,Petrol,,245,,1199000,INR,165.0,ESTIMATED
+INDIA,BMW,R nine T,,Premium/Cruiser,1170.0,,22.0,Petrol,,208,,1850000,INR,105.0,ESTIMATED
+INDIA,Yamaha,Fazer 25,,Street/Sport,249.0,,43.0,Petrol,,154,,144180,INR,53.7,ESTIMATED
+INDIA,Kawasaki,Ninja H2,,Premium/Cruiser,998.0,,15.0,Petrol,,238,,3499000,INR,154.0,ESTIMATED
+INDIA,Jawa,42,,Premium/Cruiser,293.0,,37.0,Petrol,,170,,193142,INR,62.4,ESTIMATED
+INDIA,Bajaj,Dominar 400 [2019],,Premium/Cruiser,373.3,,27.0,Petrol,,184,,202755,INR,85.6,ESTIMATED
+INDIA,Hero Electric,NYX HX,,,,,165.0,Petrol,,73,,67540,INR,14.0,ESTIMATED
+INDIA,TVS,Apache RTR 200 4V,,Street/Sport,197.8,,32.0,Petrol,5 Speed Manual,149,12.0,129315,INR,72.2,ESTIMATED
+INDIA,Kawasaki,Z1000,,Premium/Cruiser,1043.0,,15.0,Petrol,,221,,1510000,INR,154.0,ESTIMATED
+INDIA,Gravton,Motors Quanta,,,,,320.0,Petrol,,100,,99000,INR,7.2,ESTIMATED
+INDIA,Kawasaki,Z250,,Street/Sport,249.0,,26.0,Petrol,,168,,308000,INR,88.8,ESTIMATED
+INDIA,BMW,G 310 GS,,Premium/Cruiser,313.0,,30.0,Petrol,,169,,290000,INR,77.0,ESTIMATED
+INDIA,Benelli,Imperiale 400,,Premium/Cruiser,374.0,,31.25,Petrol,,205,,189799,INR,73.9,ESTIMATED
+INDIA,Husqvarna,Vitpilen 250,,Street/Sport,248.8,,35.0,Petrol,,152,,215000,INR,66.0,ESTIMATED
+INDIA,Mv Agusta,F3 800 RC,,Premium/Cruiser,798.0,,14.0,Petrol,,173,,2149086,INR,165.0,ESTIMATED
+INDIA,Yezdi,Scrambler,,Premium/Cruiser,334.0,,,Petrol,,182,,204900,INR,,ESTIMATED
+INDIA,Yamaha,FZS 25,,Street/Sport,249.0,,43.0,Petrol,,154,,143300,INR,53.7,ESTIMATED
+INDIA,BMW,R 1200,,Premium/Cruiser,1170.0,,18.0,Petrol,,244,,1585000,INR,128.3,ESTIMATED
+INDIA,Harley-Davidson,Fat Boy,,Premium/Cruiser,1868.0,,15.0,Petrol,,304,,1825000,INR,154.0,ESTIMATED
+INDIA,BMW,K 1600,,Premium/Cruiser,1649.0,,15.0,Petrol,,350,,2830000,INR,154.0,ESTIMATED
+INDIA,Honda,CB300R,,Premium/Cruiser,286.0,,30.2,Petrol,,146,,277000,INR,76.5,ESTIMATED
+INDIA,Hero Electric,Atria LX,,,,,85.0,Petrol,,69,,66640,INR,27.2,ESTIMATED
+INDIA,Triumph,Tiger 1200,,Premium/Cruiser,1160.0,,18.0,Petrol,,245,,1919000,INR,128.3,ESTIMATED
+INDIA,Harley-Davidson,Iron 883,,Premium/Cruiser,883.0,,20.0,Petrol,,256,,938000,INR,115.5,ESTIMATED
+INDIA,Yezdi,Adventure,,Premium/Cruiser,334.0,,,Petrol,,188,,209900,INR,,ESTIMATED
+INDIA,Hero Electric,Flash LX,,,,,85.0,Petrol,,69,,59640,INR,27.2,ESTIMATED
+INDIA,Kawasaki,Ninja ZX-10RR,,Premium/Cruiser,998.0,,15.0,Petrol,,206,,1698000,INR,154.0,ESTIMATED
+INDIA,KTM,250 Adventure,,Street/Sport,248.0,,35.0,Petrol,,177,,242000,INR,66.0,ESTIMATED
+INDIA,Jawa,300,,Premium/Cruiser,293.0,,37.5,Petrol,,170,,180415,INR,61.6,ESTIMATED
+INDIA,Harley-Davidson,CVO Limited,,Premium/Cruiser,1923.0,,8.0,Petrol,,411,,4999000,INR,288.8,ESTIMATED
+INDIA,Honda,CRF1000L Africa Twin,,Premium/Cruiser,999.1,,16.0,Petrol,,243,,1350000,INR,144.4,ESTIMATED
+INDIA,Okinawa,Okhi 90,,,,,160.0,Petrol,,96,,103866,INR,14.4,ESTIMATED
+INDIA,Kawasaki,Ninja ZX-6R,,Premium/Cruiser,636.0,,23.59,Petrol,,196,,1049000,INR,97.9,ESTIMATED
+INDIA,Ducati,Panigale V4,,Premium/Cruiser,1103.0,,14.5,Petrol,,195,,2350000,INR,159.3,ESTIMATED
+INDIA,Honda,CBR650R,,Premium/Cruiser,648.7,,25.0,Petrol,,211,,935000,INR,92.4,ESTIMATED
+INDIA,BMW,R 1250 GS Adventure,,Premium/Cruiser,1254.0,,21.0,Petrol,,268,,2240000,INR,110.0,ESTIMATED
+INDIA,Harley-Davidson,Roadster,,Premium/Cruiser,1202.0,,20.0,Petrol,,250,,1099000,INR,115.5,ESTIMATED
+INDIA,Kawasaki,KLX 110,,Commuter,112.0,,80.0,Petrol,,76,,299500,INR,28.9,ESTIMATED
+INDIA,TVS,Apache RTR 165 RP,,Street/Sport,164.9,,,Petrol,,148,,145001,INR,,ESTIMATED
+INDIA,Ducati,Monster 797,,Premium/Cruiser,803.0,,18.86,Petrol,,193,,803000,INR,122.5,ESTIMATED
+INDIA,Aprilia,SR 160,,Street/Sport,160.0,,35.0,Petrol,,122,,117494,INR,66.0,ESTIMATED
+INDIA,Kawasaki,Z1000R,,Premium/Cruiser,1043.0,,15.0,Petrol,,221,,1610000,INR,154.0,ESTIMATED
+INDIA,BMW,S 1000 R,,Premium/Cruiser,999.0,,21.0,Petrol,,199,,1790000,INR,110.0,ESTIMATED
+INDIA,Odysse,Evoqis,,,,,,Petrol,,200,,157000,INR,,ESTIMATED
+INDIA,Mv Agusta,Brutale 800 RR,,Premium/Cruiser,798.0,,18.0,Petrol,,175,,2052356,INR,128.3,ESTIMATED
+INDIA,Bajaj,Pulsar F250,,Street/Sport,249.1,,40.0,Petrol,,164,,140000,INR,57.8,ESTIMATED
+INDIA,Ampere,V48,,,,,45.0,Petrol,,84,,38719,INR,51.3,ESTIMATED
+INDIA,Ducati,Monster 821,,Premium/Cruiser,821.0,,13.0,Petrol,,205,,1099000,INR,177.7,ESTIMATED
+INDIA,Kawasaki,Ninja ZX-14R,,Premium/Cruiser,1441.0,,18.0,Petrol,,269,,1970000,INR,128.3,ESTIMATED
+INDIA,Aprilia,RSV4,,Premium/Cruiser,1099.0,,12.0,Petrol,,202,,2369000,INR,192.5,ESTIMATED
+INDIA,BMW,850 GS,,Premium/Cruiser,853.0,,22.0,Petrol,,229,,1250000,INR,105.0,ESTIMATED
+INDIA,Kabira,Mobility KM 3000,,,,,120.0,Petrol,,150,,126990,INR,19.2,ESTIMATED
+INDIA,BMW,750 GS,,Premium/Cruiser,853.0,,22.0,Petrol,,224,,899000,INR,105.0,ESTIMATED
+INDIA,Ampere,Reo,,,,,45.0,Petrol,,70,,44838,INR,51.3,ESTIMATED
+INDIA,KTM,790 Duke,,Premium/Cruiser,799.0,,22.72,Petrol,,169,,863945,INR,101.7,ESTIMATED
+INDIA,Okinawa,Ridge +,,,,,100.0,Petrol,,96,,64998,INR,23.1,ESTIMATED
+INDIA,Harley-Davidson,Forty-Eight,,Premium/Cruiser,1202.0,,20.0,Petrol,,252,,1061000,INR,115.5,ESTIMATED
+INDIA,Ducati,Multistrada V2,,Premium/Cruiser,937.0,,16.0,Petrol,,230,,1465000,INR,144.4,ESTIMATED
+INDIA,Piaggio,Vespa 150,,Scooter,154.8,,45.0,Petrol,,114,,122664,INR,51.3,ESTIMATED
+INDIA,Benelli,TRK 251,,Street/Sport,249.0,,24.39,Petrol,,164,,251000,INR,94.7,ESTIMATED
+INDIA,Okinawa,Lite,,,,,50.0,Petrol,,150,,59990,INR,46.2,ESTIMATED
+INDIA,Aprilia,Storm 125,,Commuter,124.5,,40.0,Petrol,,122,,85431,INR,57.8,ESTIMATED
+INDIA,Triumph,Street Triple,,Premium/Cruiser,765.0,,19.1,Petrol,,166,,915000,INR,120.9,ESTIMATED
+INDIA,Harley-Davidson,Sportster S,,Premium/Cruiser,1252.0,,11.8,Petrol,,228,,1551000,INR,195.8,ESTIMATED
+INDIA,Kawasaki,Vulcan S,,Premium/Cruiser,649.0,,23.0,Petrol,,235,,616000,INR,100.4,ESTIMATED
+INDIA,Ducati,Scrambler,,Premium/Cruiser,803.0,,20.0,Petrol,,173,,799000,INR,115.5,ESTIMATED
+INDIA,Indian,Scout,,Premium/Cruiser,1131.0,,25.0,Petrol,,244,,1269500,INR,92.4,ESTIMATED
+INDIA,Mahindra,Mojo,,Premium/Cruiser,295.0,,25.0,Petrol,,186,,199000,INR,92.4,ESTIMATED
+INDIA,Kawasaki,Ninja H2 SX,,Premium/Cruiser,998.0,,15.0,Petrol,,256,,2289000,INR,154.0,ESTIMATED
+INDIA,Benelli,Leoncino 250,,Street/Sport,249.0,,37.0,Petrol,,162,,250000,INR,62.4,ESTIMATED
+INDIA,Suzuki,Gixxer 250,,Street/Sport,249.0,,38.0,Petrol,,156,,171200,INR,60.8,ESTIMATED
+INDIA,Mv Agusta,F4 RR,,Premium/Cruiser,998.0,,15.0,Petrol,,190,,3883000,INR,154.0,ESTIMATED
+INDIA,Moto Guzzi,Audace,,Premium/Cruiser,1380.0,,15.0,Petrol,,299,,2314000,INR,154.0,ESTIMATED
+INDIA,Indian,Chief Vintage,,Premium/Cruiser,1811.0,,20.0,Petrol,,379,,2532500,INR,115.5,ESTIMATED
+INDIA,Okaya,Classiq,,,,,200.0,Petrol,,95,,69900,INR,11.6,ESTIMATED
+INDIA,Kawasaki,Ninja H2 SX SE,,Premium/Cruiser,998.0,,15.0,Petrol,,260,,2819000,INR,154.0,ESTIMATED
+INDIA,Ducati,Diavel 1260,,Premium/Cruiser,1262.0,,18.5,Petrol,,244,,1849000,INR,124.9,ESTIMATED
+INDIA,KTM,390 Adventure,,Premium/Cruiser,373.0,,25.0,Petrol,,158,,335000,INR,92.4,ESTIMATED
+INDIA,Harley-Davidson,Street Bob,,Premium/Cruiser,1745.0,,15.0,Petrol,,286,,1259000,INR,154.0,ESTIMATED
+INDIA,Benelli,Leoncino,,Premium/Cruiser,500.0,,24.0,Petrol,,150,,470000,INR,96.2,ESTIMATED
+INDIA,Indian,Scout Sixty,,Premium/Cruiser,999.0,,25.0,Petrol,,254,,1099500,INR,92.4,ESTIMATED
+INDIA,Honda,CB 650 R,,Premium/Cruiser,648.7,,25.0,Petrol,,206,,867275,INR,92.4,ESTIMATED
+INDIA,Ducati,Hyperstrada,,Premium/Cruiser,937.0,,20.0,Petrol,,210,,1215000,INR,115.5,ESTIMATED
+INDIA,BMW,K 1600 B,,Premium/Cruiser,1649.0,,15.0,Petrol,,350,,2810000,INR,154.0,ESTIMATED
+INDIA,Kawasaki,Versys X-300,,Premium/Cruiser,296.0,,22.0,Petrol,,184,,469000,INR,105.0,ESTIMATED
+INDIA,Okinawa,R30,,,,,60.0,Petrol,,150,,58992,INR,38.5,ESTIMATED
+INDIA,Suzuki,V-Strom 650XT,,Premium/Cruiser,645.0,,,Petrol,,216,,884000,INR,,ESTIMATED
+INDIA,Okinawa,i-Praise,,,,,139.0,Petrol,,150,,108749,INR,16.6,ESTIMATED
+INDIA,Ampere,Magnus,,,,,45.0,Petrol,,94,,45999,INR,51.3,ESTIMATED
+INDIA,FB Mondial,HPS 300,,Street/Sport,249.0,,26.0,Petrol,,135,,337000,INR,88.8,ESTIMATED
+INDIA,Honda,CRF1100L Africa Twin,,Premium/Cruiser,1084.0,,20.4,Petrol,,239,,1601500,INR,113.2,ESTIMATED
+INDIA,Ducati,Monster,,Premium/Cruiser,937.0,,18.8,Petrol,,188,,1099000,INR,122.9,ESTIMATED
+INDIA,Simple,Energy One,,,,,236.0,Petrol,,110,,109999,INR,9.8,ESTIMATED
+INDIA,Benelli,TRK 502,,Premium/Cruiser,500.0,,30.97,Petrol,,235,,486000,INR,74.6,ESTIMATED
+INDIA,Ducati,Scrambler 1100,,Premium/Cruiser,1079.0,,19.2,Petrol,,189,,1099000,INR,120.3,ESTIMATED
+INDIA,Kawasaki,KX250F,,Street/Sport,249.0,,25.0,Petrol,,104,,799000,INR,92.4,ESTIMATED
+INDIA,Indian,Chief Dark Horse,,Premium/Cruiser,1890.0,,20.0,Petrol,,304,,2075922,INR,115.5,ESTIMATED
+INDIA,TVS,Apache RTR 200 FI E100,,Street/Sport,197.8,,42.0,Petrol,,152,,120000,INR,55.0,ESTIMATED
+INDIA,Odysse,V2,,,,,75.0,Petrol,,75,,75000,INR,30.8,ESTIMATED
+INDIA,Indian,Roadmaster,,Premium/Cruiser,1811.0,,15.0,Petrol,,421,,3900000,INR,154.0,ESTIMATED
+INDIA,Harley-Davidson,Softail Low Rider,,Premium/Cruiser,1745.0,,15.0,Petrol,,300,,1375000,INR,154.0,ESTIMATED
+INDIA,Ducati,959 Panigale,,Premium/Cruiser,955.0,,18.0,Petrol,,200,,1469000,INR,128.3,ESTIMATED
+INDIA,Okinawa,Dual,,,,,60.0,Petrol,,96,,58998,INR,38.5,ESTIMATED
+INDIA,BMW,F900R,,Premium/Cruiser,895.0,,24.0,Petrol,,211,,1080000,INR,96.2,ESTIMATED
+INDIA,Kabira,Mobility KM 4000,,,,,150.0,Petrol,,150,,136990,INR,15.4,ESTIMATED
+INDIA,Harley-Davidson,Softail Deluxe,,Premium/Cruiser,1745.0,,15.0,Petrol,,316,,1865000,INR,154.0,ESTIMATED
+INDIA,Aprilia,SR 125,,Commuter,125.0,,40.0,Petrol,,122,,107595,INR,57.8,ESTIMATED
+INDIA,Harley-Davidson,1200 Custom,,Premium/Cruiser,1202.0,,24.0,Petrol,,268,,1089000,INR,96.2,ESTIMATED
+INDIA,BMW,R 1200 GS Adventure,,Premium/Cruiser,1170.0,,20.0,Petrol,,263,,1725000,INR,115.5,ESTIMATED
+INDIA,Ducati,1299 Panigale,,Premium/Cruiser,1285.0,,15.0,Petrol,,190,,5182000,INR,154.0,ESTIMATED
+INDIA,Honda,CB500X,,Premium/Cruiser,471.0,,28.6,Petrol,Manual,199,,687386,INR,80.8,ESTIMATED
+INDIA,Evolet,Polo,,,,,55.0,Petrol,,82,,44499,INR,42.0,ESTIMATED
+INDIA,Honda,CB1000R +,,Premium/Cruiser,998.0,,18.0,Petrol,,213,,1446657,INR,128.3,ESTIMATED
+INDIA,Mv Agusta,Brutale 800,,Premium/Cruiser,798.0,,18.0,Petrol,,175,,1698553,INR,128.3,ESTIMATED
+INDIA,Ducati,Multistrada 950,,Premium/Cruiser,937.0,,16.0,Petrol,,230,,1549000,INR,144.4,ESTIMATED
+INDIA,Ducati,Multistrada 1260,,Premium/Cruiser,1262.0,,19.2,Petrol,,232,,1599000,INR,120.3,ESTIMATED
+INDIA,Triumph,Trident 660,,Premium/Cruiser,660.0,,,Petrol,,189,,745000,INR,,ESTIMATED
+INDIA,Aprilia,SXR 160,,Street/Sport,160.0,,,Petrol,,129,,126000,INR,,ESTIMATED
+INDIA,Kawasaki,KLX 140G,,Street/Sport,144.0,,,Petrol,,99,,406600,INR,,ESTIMATED
+INDIA,Mv Agusta,Turismo Veloce 800,,Premium/Cruiser,798.0,,17.0,Petrol,,191,,2080665,INR,135.9,ESTIMATED
+INDIA,Kawasaki,W800 Street,,Premium/Cruiser,773.0,,14.0,Petrol,,221,,733000,INR,165.0,ESTIMATED
+INDIA,Moto Guzzi,V9 Roamer,,Premium/Cruiser,850.0,,18.0,Petrol,,199,,1479000,INR,128.3,ESTIMATED
+INDIA,Triumph,Tiger 900,,Premium/Cruiser,888.0,,17.0,Petrol,,194,,1370000,INR,135.9,ESTIMATED
+INDIA,Kawasaki,KLX 450R,,Premium/Cruiser,449.0,,23.0,Petrol,,126,,899000,INR,100.4,ESTIMATED
+INDIA,Ducati,Monster 1200,,Premium/Cruiser,1198.0,,15.0,Petrol,,211,,2010000,INR,154.0,ESTIMATED
+INDIA,CFMoto,300NK,,Premium/Cruiser,292.4,,33.0,Petrol,,151,,229000,INR,70.0,ESTIMATED
+INDIA,Triumph,Thruxton R,,Premium/Cruiser,1200.0,,21.0,Petrol,,203,,1192000,INR,110.0,ESTIMATED
+INDIA,Li-ions,Elektrik Spock,,,,,130.0,Petrol,,90,,65000,INR,17.8,ESTIMATED
+INDIA,Polarity,Executive,,,,,80.0,Petrol,,55,,38000,INR,28.9,ESTIMATED
+INDIA,BMW,R 1250 R,,Premium/Cruiser,1254.0,,21.0,Petrol,,239,,1625000,INR,110.0,ESTIMATED
+INDIA,Benelli,BN 302R,,Premium/Cruiser,300.0,,20.0,Petrol,,198,,310000,INR,115.5,ESTIMATED
+INDIA,BMW,S 1000 XR,,Premium/Cruiser,999.0,,20.0,Petrol,,216,,2130000,INR,115.5,ESTIMATED
+INDIA,Ampere,Zeal Ex,,,,,85.0,Petrol,,78,,74489,INR,27.2,ESTIMATED
+INDIA,BMW,R 1200 RT,,Premium/Cruiser,1170.0,,20.0,Petrol,,276,,1835000,INR,115.5,ESTIMATED
+INDIA,Mv Agusta,Dragster 800 RR,,Premium/Cruiser,798.0,,14.9,Petrol,,168,,2052356,INR,155.0,ESTIMATED
+INDIA,Kawasaki,Z H2,,Premium/Cruiser,998.0,,15.0,Petrol,,239,,2190000,INR,154.0,ESTIMATED
+INDIA,Lohia,Omastar,,Commuter,48.0,,60.0,Petrol,,66,,40850,INR,38.5,ESTIMATED
+INDIA,Indian,FTR 1200,,Premium/Cruiser,1203.0,,18.0,Petrol,,218,,1599000,INR,128.3,ESTIMATED
+INDIA,Triumph,Bonneville Bobber,,Premium/Cruiser,1200.0,,24.0,Petrol,,251,,1225000,INR,96.2,ESTIMATED
+INDIA,CFMoto,650NK,,Premium/Cruiser,649.0,,21.0,Petrol,,206,,429000,INR,110.0,ESTIMATED
+INDIA,Ampere,Magnus Pro,,,,,75.0,Petrol,,94,,79966,INR,30.8,ESTIMATED
+INDIA,Triumph,Bonneville T120,,Premium/Cruiser,1200.0,,18.0,Petrol,,217,,1099000,INR,128.3,ESTIMATED
+INDIA,Ducati,XDiavel,,Premium/Cruiser,1262.0,,15.0,Petrol,,247,,1648000,INR,154.0,ESTIMATED
+INDIA,Ampere,Zeal,,,,,70.0,Petrol,,75,,74490,INR,33.0,ESTIMATED
+INDIA,BMW,R nineT Scrambler,,Premium/Cruiser,1197.0,,20.0,Petrol,,220,,1675000,INR,115.5,ESTIMATED
+INDIA,Triumph,Bonneville T100,,Premium/Cruiser,900.0,,26.3,Petrol,,228,,949000,INR,87.8,ESTIMATED
+INDIA,Indian,Springfield,,Premium/Cruiser,1811.0,,14.0,Petrol,,391,,3350000,INR,165.0,ESTIMATED
+INDIA,Kawasaki,Z650,,Premium/Cruiser,649.0,,18.0,Petrol,,186,,624000,INR,128.3,ESTIMATED
+INDIA,Avantura,Choppers Pravega,,Premium/Cruiser,2025.7,,18.0,Petrol,,347,,2140000,INR,128.3,ESTIMATED
+INDIA,Ducati,Hypermotard,,Premium/Cruiser,937.0,,20.0,Petrol,,204,,1112000,INR,115.5,ESTIMATED
+INDIA,Polarity,Sport,,,,,80.0,Petrol,,55,,40000,INR,28.9,ESTIMATED
+INDIA,BGauss,D15,,,,,,Petrol,,107,,99999,INR,,ESTIMATED
+INDIA,CFMoto,650GT,,Premium/Cruiser,649.3,,20.0,Petrol,,226,,559000,INR,115.5,ESTIMATED
+INDIA,BMW,M 1000 RR,,Premium/Cruiser,999.0,,,Petrol,,192,,4200000,INR,,ESTIMATED
+INDIA,Ducati,Multistrada 1200,,Premium/Cruiser,1198.4,,18.0,Petrol,,232,,1532000,INR,128.3,ESTIMATED
+INDIA,BMW,R 1200 RS,,Premium/Cruiser,1170.0,,20.0,Petrol,,236,,1555000,INR,115.5,ESTIMATED
+INDIA,Ducati,Scrambler Desert Sled,,Premium/Cruiser,803.0,,20.0,Petrol,,191,,980000,INR,115.5,ESTIMATED
+INDIA,Aprilia,RS 660,,Premium/Cruiser,659.0,,,Petrol,,183,,1339000,INR,,ESTIMATED
+INDIA,Triumph,Street Scrambler,,Premium/Cruiser,900.0,,18.0,Petrol,,223,,935000,INR,128.3,ESTIMATED
+INDIA,Evolet,Pony,,,,,55.0,Petrol,,82,,39499,INR,42.0,ESTIMATED
+INDIA,Triumph,Rocket 3,,Premium/Cruiser,2458.0,,13.0,Petrol,,291,,1990000,INR,177.7,ESTIMATED
+INDIA,Indian,Chieftain,,Premium/Cruiser,1811.0,,20.0,Petrol,,389,,3201000,INR,115.5,ESTIMATED
+INDIA,Benelli,502C,,Premium/Cruiser,500.0,,20.0,Petrol,,216,,498000,INR,115.5,ESTIMATED
+INDIA,Triumph,Tiger Sport 660,,Premium/Cruiser,660.0,,,Petrol,,206,,895000,INR,,ESTIMATED
+INDIA,Cleveland,Cyclewerks Misfit,,Street/Sport,229.0,,30.0,Petrol,,133,,249000,INR,77.0,ESTIMATED
+INDIA,Indian,Roadmaster Elite,,Premium/Cruiser,1811.0,,15.0,Petrol,,433,,4800000,INR,154.0,ESTIMATED
+INDIA,Ducati,Multistrada 1200 Enduro,,Premium/Cruiser,1198.4,,24.0,Petrol,,254,,1799000,INR,96.2,ESTIMATED
+INDIA,Nexzu,Mobility Dextro,,,,,,Petrol,,62,,47000,INR,,ESTIMATED
+INDIA,Harley-Davidson,Street Glide Special,,Premium/Cruiser,1745.0,,15.0,Petrol,,361,,3053000,INR,154.0,ESTIMATED
+INDIA,Bounce,Infinity E1,,,,,83.0,Petrol,,94,,45099,INR,27.8,ESTIMATED
+INDIA,Moto Guzzi,Eldorado,,Premium/Cruiser,1380.0,,14.0,Petrol,,314,,2367000,INR,165.0,ESTIMATED
+INDIA,BMW,C 400 GT,,Premium/Cruiser,350.0,,,Petrol,,202,,995000,INR,,ESTIMATED
+INDIA,Gemopai,Astrid Lite,,,,,80.0,Petrol,,96,,84787,INR,28.9,ESTIMATED
+INDIA,Ducati,Multistrada V4,,Premium/Cruiser,1158.0,,,Petrol,,232,,1899000,INR,,ESTIMATED
+INDIA,Aprilia,SXR 125,,Commuter,125.0,,,Petrol,,129,,115000,INR,,ESTIMATED
+INDIA,Crayon Motors,Envy,,Scooter,,,160.0,Petrol,,100,,53000,INR,14.4,ESTIMATED
+INDIA,Triumph,Speedmaster,,Premium/Cruiser,1200.0,,23.25,Petrol,,263,,1195000,INR,99.4,ESTIMATED
+INDIA,Harley-Davidson,Road King,,Premium/Cruiser,1745.0,,17.0,Petrol,,362,,2499000,INR,135.9,ESTIMATED
+INDIA,Indian,Chief Bobber Dark Horse,,Premium/Cruiser,1890.0,,20.0,Petrol,,315,,2139925,INR,115.5,ESTIMATED
+INDIA,Kawasaki,KX 450,,Premium/Cruiser,449.0,,25.0,Petrol,,110,,859000,INR,92.4,ESTIMATED
+INDIA,One,Moto Electa,,,,,150.0,Petrol,,115,,199000,INR,15.4,ESTIMATED
+INDIA,BMW,R 18,,Premium/Cruiser,1802.0,,17.8,Petrol,,345,,1990000,INR,129.8,ESTIMATED
+INDIA,Triumph,Scrambler 1200,,Premium/Cruiser,1200.0,,20.4,Petrol,,225,,1073000,INR,113.2,ESTIMATED
+INDIA,Triumph,Tiger 850 Sport,,Premium/Cruiser,888.0,,24.0,Petrol,,192,,1195000,INR,96.2,ESTIMATED
+INDIA,Kawasaki,Z900RS,,Premium/Cruiser,948.0,,20.0,Petrol,,215,,1570000,INR,115.5,ESTIMATED
+INDIA,Evolet,Derby,,,,,55.0,Petrol,,82,,46499,INR,42.0,ESTIMATED
+INDIA,Kawasaki,Versys 650,,Premium/Cruiser,649.0,,20.0,Petrol,,216,,715000,INR,115.5,ESTIMATED
+INDIA,Harley-Davidson,Fat Bob,,Premium/Cruiser,1745.0,,15.0,Petrol,,296,,1459000,INR,154.0,ESTIMATED
+INDIA,Boom Motors,Corbett-14,,,,,100.0,Petrol,,90,,86999,INR,23.1,ESTIMATED
+INDIA,Ola,Electric S1 Pro,,Scooter,,,181.0,Petrol,,125,,120149,INR,12.8,ESTIMATED
+INDIA,Ducati,SuperSport,,Premium/Cruiser,937.0,,20.0,Petrol,,210,,1349000,INR,115.5,ESTIMATED
+INDIA,Avantura,Choppers Rudra,,Premium/Cruiser,2025.7,,19.0,Petrol,,344,,2390000,INR,121.6,ESTIMATED
+INDIA,Kawasaki,Versys 1000,,Premium/Cruiser,1043.0,,14.0,Petrol,,255,,1172000,INR,165.0,ESTIMATED
+INDIA,Harley-Davidson,Pan America 1250,,Premium/Cruiser,1252.0,,18.0,Petrol,,242,,1690000,INR,128.3,ESTIMATED
+INDIA,Ducati,Panigale V2,,Premium/Cruiser,955.0,,16.0,Petrol,,197,,1748826,INR,144.4,ESTIMATED
+INDIA,BMW,R 1250 RT,,Premium/Cruiser,1254.0,,21.0,Petrol,,279,,2250000,INR,110.0,ESTIMATED
+INDIA,Moto Guzzi,MGX-21,,Premium/Cruiser,1380.0,,15.0,Petrol,,341,,3026000,INR,154.0,ESTIMATED
+INDIA,Nexzu,Mobility Dextro +,,,,,110.0,Petrol,,62,,66500,INR,21.0,ESTIMATED
+INDIA,Kawasaki,Z650RS,,Premium/Cruiser,649.0,,,Petrol,,192,,672000,INR,,ESTIMATED
+INDIA,Triumph,Speed Triple 1200 RS,,Premium/Cruiser,1160.0,,22.0,Petrol,,198,,1695000,INR,105.0,ESTIMATED
+INDIA,Triumph,Street Twin,,Premium/Cruiser,900.0,,18.0,Petrol,,216,,795000,INR,128.3,ESTIMATED
+INDIA,Ducati,StreetFighter V4,,Premium/Cruiser,1103.0,,,Petrol,,199,,1999000,INR,,ESTIMATED
+INDIA,Kawasaki,KX 100,,Commuter,99.0,,55.0,Petrol,,77,,487800,INR,42.0,ESTIMATED
+INDIA,Ducati,Hypermotard 950,,Premium/Cruiser,937.0,,9.0,Petrol,,176,,1402278,INR,256.7,ESTIMATED
+INDIA,Moto Guzzi,V9 Bobber,,Premium/Cruiser,850.0,,18.0,Petrol,,199,,1479000,INR,128.3,ESTIMATED
+INDIA,Aprilia,Tuono 660,,Premium/Cruiser,659.0,,,Petrol,,183,,1309000,INR,,ESTIMATED
+INDIA,Ampere,Reo Elite,,,,,55.0,Petrol,,68,,47264,INR,42.0,ESTIMATED
+INDIA,BMW,R 1200 R,,Premium/Cruiser,1170.0,,20.0,Petrol,,232,,1505000,INR,115.5,ESTIMATED
+INDIA,Triumph,Speed Twin,,Premium/Cruiser,1200.0,,20.8,Petrol,,216,,1099000,INR,111.1,ESTIMATED
+INDIA,Aprilia,Tuono V4,,Premium/Cruiser,1077.0,,14.0,Petrol,,209,,2066000,INR,165.0,ESTIMATED
+INDIA,Harley-Davidson,Heritage Softail Classic,,Premium/Cruiser,1745.0,,15.0,Petrol,,316,,1971000,INR,154.0,ESTIMATED
+INDIA,CFMoto,650MT,,Premium/Cruiser,649.0,,20.0,Petrol,,218,,529000,INR,115.5,ESTIMATED
+INDIA,BMW,K 1600 GTL,,Premium/Cruiser,1649.0,,13.0,Petrol,,332,,2930000,INR,177.7,ESTIMATED
+INDIA,Indian,Chieftain Dark Horse,,Premium/Cruiser,1811.0,,18.0,Petrol,,377,,2999000,INR,128.3,ESTIMATED
+INDIA,BGauss,B8,,,,,70.0,Petrol,,88,,62999,INR,33.0,ESTIMATED
+INDIA,Moto Guzzi,V85 TT,,Premium/Cruiser,853.0,,20.4,Petrol,,229,,1540000,INR,113.2,ESTIMATED
+INDIA,Indian,Super Chief Limited,,Premium/Cruiser,1890.0,,,Petrol,,324,,2282155,INR,,ESTIMATED
+INDIA,Indian,Chief Classic,,Premium/Cruiser,1811.0,,20.0,Petrol,,357,,2129500,INR,115.5,ESTIMATED
+INDIA,Earth Energy,EV Glyde +,,,,,100.0,Petrol,,110,,92000,INR,23.1,ESTIMATED
+INDIA,Cleveland,Cyclewerks Ace Deluxe,,Street/Sport,229.0,,33.98,Petrol,,133,,223000,INR,68.0,ESTIMATED
+INDIA,Harley-Davidson,Road Glide Special,,Premium/Cruiser,1745.0,,15.0,Petrol,,372,,3299000,INR,154.0,ESTIMATED
+INDIA,EeVe,Soul,,,,,120.0,Petrol,,140,,140000,INR,19.2,ESTIMATED
+INDIA,Indian,Chieftain Elite,,Premium/Cruiser,1811.0,,18.0,Petrol,,388,,3800000,INR,128.3,ESTIMATED
+INDIA,Kymco,Flow,,,,,160.0,Petrol,,85,,74740,INR,14.4,ESTIMATED
+INDIA,Odysse,Racer,,,,,70.0,Petrol,,100,,59500,INR,33.0,ESTIMATED
+INDIA,Mv Agusta,Brutale 1090,,Premium/Cruiser,1078.0,,15.0,Petrol,,183,,2102268,INR,154.0,ESTIMATED
+INDIA,BMW,F900XR,,Premium/Cruiser,895.0,,24.0,Petrol,,219,,1230000,INR,96.2,ESTIMATED
+INDIA,BGauss,A2,,,,,110.0,Petrol,,88,,52499,INR,21.0,ESTIMATED

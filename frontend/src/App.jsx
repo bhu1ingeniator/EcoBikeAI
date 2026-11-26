@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { getJson, postJson } from "./api";
+import { getJson, postJson, getToken, setToken } from "./api";
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer,
 } from "recharts";
 import Landing, { BikeIcon } from "./Landing";
+import Auth from "./Auth";
 import "./App.css";
 
 const FRIENDLY_ERROR =
@@ -97,7 +98,8 @@ function useBikePicker(region, setError, withStats) {
 }
 
 export default function App() {
-  const [started, setStarted] = useState(false);
+  const [screen, setScreen] = useState("landing");
+  const [user, setUser] = useState(null);
   const [region, setRegion] = useState("INDIA");
   const [brands, setBrands] = useState([]);
   const [loadingBrands, setLoadingBrands] = useState(false);
@@ -108,6 +110,14 @@ export default function App() {
 
   const main = useBikePicker(region, setError, true);
   const other = useBikePicker(region, setError, false);
+
+  // On page load, if a saved login token is still valid, sign the user back in
+  useEffect(() => {
+    if (!getToken()) return;
+    getJson("/auth/me")
+      .then((u) => setUser(u))
+      .catch(() => setToken(null));
+  }, []);
 
   useEffect(() => {
     setAnalysis("");
@@ -133,6 +143,10 @@ export default function App() {
   }, [main.selected?.id]);
 
   async function analyze() {
+    if (!user) {
+      setAnalysis("Sign in to get an AI analysis of this bike.");
+      return;
+    }
     if (!main.selected) return;
     setAiLoading(true);
     setAnalysis("");
@@ -140,14 +154,47 @@ export default function App() {
       const data = await postJson("/ai/analyze", { id: main.selected.id });
       setAnalysis(data.analysis);
     } catch (e) {
-      setAnalysis(`Couldn't get an analysis: ${e.message}`);
+      if (e.status === 401 || e.status === 403) {
+        setToken(null);
+        setUser(null);
+        setAnalysis("Your session has ended. Please sign in again.");
+      } else {
+        setAnalysis(`Couldn't get an analysis: ${e.message}`);
+      }
     } finally {
       setAiLoading(false);
     }
   }
 
-  if (!started) {
-    return <Landing onStart={() => setStarted(true)} />;
+  function signOut() {
+    setToken(null);
+    setUser(null);
+    setAnalysis("");
+    setScreen("landing");
+  }
+
+  if (screen === "landing") {
+    return (
+      <Landing
+        onStart={() => setScreen("app")}
+        onSignIn={() => setScreen("login")}
+        onRegister={() => setScreen("register")}
+      />
+    );
+  }
+
+  if (screen === "login" || screen === "register") {
+    return (
+      <Auth
+        mode={screen}
+        onSwitch={setScreen}
+        onBack={() => setScreen("landing")}
+        onAuthed={(u) => {
+          setUser(u);
+          setScreen("app");
+        }}
+      />
+    );
   }
 
   const s = main.selected;
@@ -160,9 +207,19 @@ export default function App() {
           <BikeIcon size={24} />
           <span className="logo-text">EcoBike<span>AI</span></span>
         </div>
-        <div className="toggle">
-          <button className={region === "INDIA" ? "on" : ""} onClick={() => setRegion("INDIA")}>India</button>
-          <button className={region === "GLOBAL" ? "on" : ""} onClick={() => setRegion("GLOBAL")}>Global</button>
+        <div className="header-right">
+          <div className="toggle">
+            <button className={region === "INDIA" ? "on" : ""} onClick={() => setRegion("INDIA")}>India</button>
+            <button className={region === "GLOBAL" ? "on" : ""} onClick={() => setRegion("GLOBAL")}>Global</button>
+          </div>
+          {user ? (
+            <div className="user-box">
+              <span className="user-name">{user.name}</span>
+              <button className="link" onClick={signOut}>Sign out</button>
+            </div>
+          ) : (
+            <button className="cta" onClick={() => setScreen("login")}>Sign in</button>
+          )}
         </div>
       </header>
 

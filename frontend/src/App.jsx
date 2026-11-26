@@ -173,20 +173,21 @@ export default function App() {
     setScreen("landing");
   }
 
+    // Only signed-in users can enter the dashboard
   if (screen === "landing") {
     return (
       <Landing
-        onStart={() => setScreen("app")}
+        onStart={() => setScreen(user ? "app" : "login")}
         onSignIn={() => setScreen("login")}
         onRegister={() => setScreen("register")}
       />
     );
   }
 
-  if (screen === "login" || screen === "register") {
+  if (screen !== "app" || !user) {
     return (
       <Auth
-        mode={screen}
+        mode={screen === "register" ? "register" : "login"}
         onSwitch={setScreen}
         onBack={() => setScreen("landing")}
         onAuthed={(u) => {

@@ -3,8 +3,8 @@ import { getJson, postJson } from "./api";
 import {
   BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer,
 } from "recharts";
+import Landing, { BikeIcon } from "./Landing";
 import "./App.css";
-import Landing from "./Landing";
 
 const FRIENDLY_ERROR =
   "Couldn't load data. The server may be waking up (free hosting), so please try again in a minute.";
@@ -38,7 +38,6 @@ function useBikePicker(region, setError, withStats) {
   const [loadingModels, setLoadingModels] = useState(false);
   const [loadingBike, setLoadingBike] = useState(false);
 
-  // Brand changed: load its models (and chart stats for the main picker)
   useEffect(() => {
     setModelText("");
     setModel("");
@@ -63,7 +62,6 @@ function useBikePicker(region, setError, withStats) {
     return () => { cancelled = true; };
   }, [brand, region]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // Model chosen: load its variants and pick the first one
   useEffect(() => {
     setSelected(null);
     setVariants([]);
@@ -111,7 +109,6 @@ export default function App() {
   const main = useBikePicker(region, setError, true);
   const other = useBikePicker(region, setError, false);
 
-  // Region changed: reload brands and clear both pickers
   useEffect(() => {
     setAnalysis("");
     main.setBrand("");
@@ -131,7 +128,6 @@ export default function App() {
     return () => { cancelled = true; };
   }, [region]); // eslint-disable-line react-hooks/exhaustive-deps
 
-  // A different bike was chosen: clear the previous AI analysis
   useEffect(() => {
     setAnalysis("");
   }, [main.selected?.id]);
@@ -151,8 +147,8 @@ export default function App() {
   }
 
   if (!started) {
-  return <Landing onStart={() => setStarted(true)} />;
-}
+    return <Landing onStart={() => setStarted(true)} />;
+  }
 
   const s = main.selected;
   const o = other.selected;
@@ -160,7 +156,10 @@ export default function App() {
   return (
     <div className="app">
       <header>
-        <div className="logo">EcoBike<span>AI</span></div>
+        <div className="logo">
+          <BikeIcon size={24} />
+          <span className="logo-text">EcoBike<span>AI</span></span>
+        </div>
         <div className="toggle">
           <button className={region === "INDIA" ? "on" : ""} onClick={() => setRegion("INDIA")}>India</button>
           <button className={region === "GLOBAL" ? "on" : ""} onClick={() => setRegion("GLOBAL")}>Global</button>
@@ -176,7 +175,7 @@ export default function App() {
 
       <div className="layout">
         <aside className="panel">
-          <h3>Find your bike</h3>
+          <p className="eyebrow">Find your bike</p>
           <PickerFields picker={main} brands={brands} loadingBrands={loadingBrands} idPrefix="main" />
 
           <button className="link compare-toggle" onClick={() => setCompareOn(!compareOn)}>
@@ -185,7 +184,7 @@ export default function App() {
 
           {compareOn && (
             <>
-              <h3 className="compare-title">Compare with</h3>
+              <p className="eyebrow compare-title">Compare with</p>
               <PickerFields picker={other} brands={brands} loadingBrands={loadingBrands} idPrefix="other" />
             </>
           )}
@@ -203,8 +202,9 @@ export default function App() {
           )}
 
           {s && !main.loadingBike && (
-            <>
-              <h2>{s.brand} {s.model}</h2>
+            <section>
+              <p className="eyebrow">Selected bike</p>
+              <h2 className="section-title">{s.brand} {s.model}</h2>
               <div className="cards">
                 <Card label="Mileage" value={fmt(s.mileageKmpl, " km/l")} />
                 <Card label="CO₂ emission" value={fmt(s.co2GKm, " g/km")} sub={sourceLabel(s.co2Source)} />
@@ -216,14 +216,14 @@ export default function App() {
                 <Card label="Category" value={fmt(s.category)} />
                 <Card label="Price" value={priceOf(s)} />
               </div>
-            </>
+            </section>
           )}
 
           {compareOn && s && o && <CompareTable a={s} b={o} />}
         </main>
 
         <aside className="panel ai">
-          <h3>AI suggestions</h3>
+          <p className="eyebrow">AI suggestions</p>
           <button className="cta" onClick={analyze} disabled={!s || aiLoading}>
             {aiLoading ? "Analysing..." : "Analyse this bike"}
           </button>
@@ -295,6 +295,7 @@ function BrandChart({ stats, region }) {
   }
   return (
     <div className="chart-card">
+      <p className="eyebrow">Brand CO₂ overview</p>
       <h3>{stats.brand}: CO₂ by model (g/km, lowest first)</h3>
       <p className="muted">
         Brand average: {stats.summary.avg_co2 ?? "n/a"} g/km across {stats.summary.models} models.
@@ -335,7 +336,7 @@ function CompareTable({ a, b }) {
   ];
   return (
     <div className="chart-card">
-      <h3>Side by side</h3>
+      <p className="eyebrow">Side by side</p>
       <div className="table-wrap">
         <table className="compare">
           <thead>

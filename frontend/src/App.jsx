@@ -4,13 +4,30 @@ import {
   BarChart, Bar, XAxis, YAxis, Tooltip, CartesianGrid, ResponsiveContainer,
 } from "recharts";
 import "./App.css";
+import Landing from "./Landing";
 
-const fmt = (v, unit = "") => (v === null || v === undefined ? "N/A" : `${v}${unit}`);
+const FRIENDLY_ERROR =
+  "Couldn't load data. The server may be waking up (free hosting), so please try again in a minute.";
 
-export default function App() {
-  const [started, setStarted] = useState(false);
-  const [region, setRegion] = useState("INDIA");
-  const [brands, setBrands] = useState([]);
+const SOURCE_LABELS = {
+  DATASET: "Dataset",
+  ESTIMATED: "Estimated",
+  ZERO_TAILPIPE: "Electric (zero tailpipe)",
+};
+
+const fmt = (v, unit = "") =>
+  v === null || v === undefined || v === "" ? "Not in dataset" : `${v}${unit}`;
+
+const sourceLabel = (s) => SOURCE_LABELS[s] || s || "";
+
+const priceOf = (b) => {
+  if (!b.price) return "Not in dataset";
+  const symbol = b.currency === "INR" ? "₹" : "$";
+  return `${symbol} ${b.price.toLocaleString()}`;
+};
+
+// One bike picker: brand -> model -> variant
+function useBikePicker(region, setError, withStats) {
   const [brand, setBrand] = useState("");
   const [models, setModels] = useState([]);
   const [modelText, setModelText] = useState("");
@@ -18,63 +35,127 @@ export default function App() {
   const [variants, setVariants] = useState([]);
   const [selected, setSelected] = useState(null);
   const [stats, setStats] = useState(null);
-  const [analysis, setAnalysis] = useState("");
-  const [aiLoading, setAiLoading] = useState(false);
-  const [error, setError] = useState("");
+  const [loadingModels, setLoadingModels] = useState(false);
+  const [loadingBike, setLoadingBike] = useState(false);
 
-  // Region changed: reload brands and clear everything below
+  // Brand changed: load its models (and chart stats for the main picker)
   useEffect(() => {
-    setBrand(""); setModels([]); setModelText(""); setModel("");
-    setVariants([]); setSelected(null); setStats(null); setAnalysis("");
-    getJson(`/bikes/brands?region=${region}`).then(setBrands).catch((e) => setError(e.message));
-  }, [region]);
-
-  // Brand changed: load its models and its chart stats
-  useEffect(() => {
-    setModelText(""); setModel(""); setVariants([]); setSelected(null); setAnalysis("");
+    setModelText("");
+    setModel("");
+    setVariants([]);
+    setSelected(null);
     setStats(null);
-    if (!brand) { setModels([]); return; }
+    setModels([]);
+    if (!brand) return;
+
+    let cancelled = false;
+    setLoadingModels(true);
     getJson(`/bikes/models?region=${region}&brand=${encodeURIComponent(brand)}`)
-      .then(setModels).catch((e) => setError(e.message));
-    getJson(`/stats/brand?region=${region}&brand=${encodeURIComponent(brand)}`)
-      .then(setStats).catch((e) => setError(e.message));
-  }, [brand]);
+      .then((m) => { if (!cancelled) setModels(m); })
+      .catch(() => { if (!cancelled) setError(FRIENDLY_ERROR); })
+      .finally(() => { if (!cancelled) setLoadingModels(false); });
+
+    if (withStats) {
+      getJson(`/stats/brand?region=${region}&brand=${encodeURIComponent(brand)}`)
+        .then((s) => { if (!cancelled) setStats(s); })
+        .catch(() => {});
+    }
+    return () => { cancelled = true; };
+  }, [brand, region]); // eslint-disable-line react-hooks/exhaustive-deps
 
   // Model chosen: load its variants and pick the first one
   useEffect(() => {
-    setSelected(null); setAnalysis("");
-    if (!model) { setVariants([]); return; }
+    setSelected(null);
+    setVariants([]);
+    if (!model) return;
+
+    let cancelled = false;
+    setLoadingBike(true);
     getJson(`/bikes?region=${region}&brand=${encodeURIComponent(brand)}&model=${encodeURIComponent(model)}`)
-      .then((v) => { setVariants(v); setSelected(v[0] ?? null); })
-      .catch((e) => setError(e.message));
-  }, [model]);
+      .then((v) => {
+        if (!cancelled) {
+          setVariants(v);
+          setSelected(v[0] ?? null);
+        }
+      })
+      .catch(() => { if (!cancelled) setError(FRIENDLY_ERROR); })
+      .finally(() => { if (!cancelled) setLoadingBike(false); });
+    return () => { cancelled = true; };
+  }, [model]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  function onModelInput(value) {
+    setModelText(value);
+    setModel(models.includes(value) ? value : "");
+  }
+
+  function onVariantChange(id) {
+    setSelected(variants.find((v) => String(v.id) === id) ?? null);
+  }
+
+  return {
+    brand, setBrand, models, modelText, onModelInput, loadingModels,
+    variants, selected, onVariantChange, loadingBike, stats,
+  };
+}
+
+export default function App() {
+  const [started, setStarted] = useState(false);
+  const [region, setRegion] = useState("INDIA");
+  const [brands, setBrands] = useState([]);
+  const [loadingBrands, setLoadingBrands] = useState(false);
+  const [error, setError] = useState("");
+  const [analysis, setAnalysis] = useState("");
+  const [aiLoading, setAiLoading] = useState(false);
+  const [compareOn, setCompareOn] = useState(false);
+
+  const main = useBikePicker(region, setError, true);
+  const other = useBikePicker(region, setError, false);
+
+  // Region changed: reload brands and clear both pickers
+  useEffect(() => {
+    setAnalysis("");
+    main.setBrand("");
+    other.setBrand("");
+
+    let cancelled = false;
+    setLoadingBrands(true);
+    getJson(`/bikes/brands?region=${region}`)
+      .then((b) => {
+        if (!cancelled) {
+          setBrands(b);
+          setError("");
+        }
+      })
+      .catch(() => { if (!cancelled) setError(FRIENDLY_ERROR); })
+      .finally(() => { if (!cancelled) setLoadingBrands(false); });
+    return () => { cancelled = true; };
+  }, [region]); // eslint-disable-line react-hooks/exhaustive-deps
+
+  // A different bike was chosen: clear the previous AI analysis
+  useEffect(() => {
+    setAnalysis("");
+  }, [main.selected?.id]);
 
   async function analyze() {
-    if (!selected) return;
-    setAiLoading(true); setAnalysis("");
+    if (!main.selected) return;
+    setAiLoading(true);
+    setAnalysis("");
     try {
-      const data = await postJson("/ai/analyze", { id: selected.id });
+      const data = await postJson("/ai/analyze", { id: main.selected.id });
       setAnalysis(data.analysis);
     } catch (e) {
-      setAnalysis("Error: " + e.message);
+      setAnalysis(`Couldn't get an analysis: ${e.message}`);
     } finally {
       setAiLoading(false);
     }
   }
 
   if (!started) {
-    return (
-      <div className="landing">
-        <h1>EcoBike <span>AI</span></h1>
-        <p>Explore bike brands and models, compare mileage and CO₂ emissions, and get AI-driven insights for smarter, cleaner commuting.</p>
-        <button className="cta" onClick={() => setStarted(true)}>Get Started</button>
-      </div>
-    );
-  }
+  return <Landing onStart={() => setStarted(true)} />;
+}
 
-  const priceText = selected?.price
-    ? `${selected.currency === "INR" ? "₹" : "$"} ${selected.price.toLocaleString()}`
-    : "N/A";
+  const s = main.selected;
+  const o = other.selected;
 
   return (
     <div className="app">
@@ -86,76 +167,64 @@ export default function App() {
         </div>
       </header>
 
-      {error && <div className="error">{error}</div>}
+      {error && (
+        <div className="error">
+          <span>{error}</span>
+          <button className="link" onClick={() => setError("")}>Dismiss</button>
+        </div>
+      )}
 
       <div className="layout">
         <aside className="panel">
           <h3>Find your bike</h3>
+          <PickerFields picker={main} brands={brands} loadingBrands={loadingBrands} idPrefix="main" />
 
-          <label>Brand</label>
-          <select value={brand} onChange={(e) => setBrand(e.target.value)}>
-            <option value="">Select brand</option>
-            {brands.map((b) => <option key={b} value={b}>{b}</option>)}
-          </select>
+          <button className="link compare-toggle" onClick={() => setCompareOn(!compareOn)}>
+            {compareOn ? "Stop comparing" : "+ Compare with another bike"}
+          </button>
 
-          <label>Model</label>
-          <input
-            list="model-list"
-            className="search"
-            disabled={!brand}
-            placeholder={brand ? "Type to search a model" : "Choose a brand first"}
-            value={modelText}
-            onChange={(e) => {
-              const v = e.target.value;
-              setModelText(v);
-              if (models.includes(v)) setModel(v);
-              else setModel("");
-            }}
-          />
-          <datalist id="model-list">
-            {models.map((m) => <option key={m} value={m} />)}
-          </datalist>
-
-          {variants.length > 1 && (
+          {compareOn && (
             <>
-              <label>Variant</label>
-              <select
-                value={selected?.id ?? ""}
-                onChange={(e) => setSelected(variants.find((v) => String(v.id) === e.target.value))}
-              >
-                {variants.map((v) => (
-                  <option key={v.id} value={v.id}>{v.year ?? "Variant"} {v.price ? `(${v.price})` : ""}</option>
-                ))}
-              </select>
+              <h3 className="compare-title">Compare with</h3>
+              <PickerFields picker={other} brands={brands} loadingBrands={loadingBrands} idPrefix="other" />
             </>
           )}
         </aside>
 
         <main className="main">
-          <BrandChart stats={stats} region={region} />
+          {main.stats && <BrandChart stats={main.stats} region={region} />}
 
-          {!selected && <div className="empty">Choose a model to see its details.</div>}
-          {selected && (
+          {main.loadingBike && (
+            <div className="empty"><span className="spinner" />Loading bike details...</div>
+          )}
+
+          {!s && !main.loadingBike && (
+            <div className="empty">Choose a model to see its details.</div>
+          )}
+
+          {s && !main.loadingBike && (
             <>
-              <h2>{selected.brand} {selected.model}</h2>
+              <h2>{s.brand} {s.model}</h2>
               <div className="cards">
-                <Card label="Mileage" value={fmt(selected.mileageKmpl, " km/l")} />
-                <Card label="CO₂ emission" value={fmt(selected.co2GKm, " g/km")} sub={selected.co2Source} />
-                <Card label="Engine" value={fmt(selected.engineCc, " cc")} />
-                <Card label="Power" value={fmt(selected.powerHp, " hp")} />
-                <Card label="Weight" value={fmt(selected.weightKg, " kg")} />
-                <Card label="Fuel tank" value={fmt(selected.fuelTankL, " L")} />
-                <Card label="Fuel type" value={fmt(selected.fuelType)} />
-                <Card label="Category" value={fmt(selected.category)} />
-                <Card label="Price" value={priceText} />
+                <Card label="Mileage" value={fmt(s.mileageKmpl, " km/l")} />
+                <Card label="CO₂ emission" value={fmt(s.co2GKm, " g/km")} sub={sourceLabel(s.co2Source)} />
+                <Card label="Engine" value={fmt(s.engineCc, " cc")} />
+                <Card label="Power" value={fmt(s.powerHp, " hp")} />
+                <Card label="Weight" value={fmt(s.weightKg, " kg")} />
+                <Card label="Fuel tank" value={fmt(s.fuelTankL, " L")} />
+                <Card label="Fuel type" value={fmt(s.fuelType)} />
+                <Card label="Category" value={fmt(s.category)} />
+                <Card label="Price" value={priceOf(s)} />
               </div>
             </>
           )}
+
+          {compareOn && s && o && <CompareTable a={s} b={o} />}
         </main>
 
         <aside className="panel ai">
           <h3>AI suggestions</h3>
-          <button className="cta" onClick={analyze} disabled={!selected || aiLoading}>
+          <button className="cta" onClick={analyze} disabled={!s || aiLoading}>
             {aiLoading ? "Analysing..." : "Analyse this bike"}
           </button>
           <pre className="analysis">{analysis}</pre>
@@ -165,20 +234,70 @@ export default function App() {
   );
 }
 
+function PickerFields({ picker, brands, loadingBrands, idPrefix }) {
+  return (
+    <>
+      <label>Brand</label>
+      <select
+        value={picker.brand}
+        disabled={loadingBrands}
+        onChange={(e) => picker.setBrand(e.target.value)}
+      >
+        <option value="">{loadingBrands ? "Loading brands..." : "Select brand"}</option>
+        {brands.map((b) => <option key={b} value={b}>{b}</option>)}
+      </select>
+
+      <label>Model</label>
+      <input
+        list={`${idPrefix}-models`}
+        className="search"
+        disabled={!picker.brand || picker.loadingModels}
+        placeholder={
+          !picker.brand ? "Choose a brand first"
+            : picker.loadingModels ? "Loading models..."
+            : "Type to search a model"
+        }
+        value={picker.modelText}
+        onChange={(e) => picker.onModelInput(e.target.value)}
+      />
+      <datalist id={`${idPrefix}-models`}>
+        {picker.models.map((m) => <option key={m} value={m} />)}
+      </datalist>
+
+      {picker.variants.length > 1 && (
+        <>
+          <label>Variant</label>
+          <select
+            value={picker.selected?.id ?? ""}
+            onChange={(e) => picker.onVariantChange(e.target.value)}
+          >
+            {picker.variants.map((v) => (
+              <option key={v.id} value={v.id}>
+                {v.year ?? "Variant"} {v.price ? `(${v.price})` : ""}
+              </option>
+            ))}
+          </select>
+        </>
+      )}
+    </>
+  );
+}
+
 function BrandChart({ stats, region }) {
   if (!stats) return null;
-  const data = stats.models.map((m) => ({
-    name: m.model,
-    co2: Number(m.co2),
-  }));
+  const data = stats.models.map((m) => ({ name: m.model, co2: Number(m.co2) }));
   if (data.length === 0) {
-    return <div className="empty">No CO₂ data for this brand.</div>;
+    return (
+      <div className="empty">
+        No tailpipe CO₂ data for this brand. It may be electric-only.
+      </div>
+    );
   }
   return (
     <div className="chart-card">
       <h3>{stats.brand}: CO₂ by model (g/km, lowest first)</h3>
       <p className="muted">
-        Brand average: {stats.summary.avg_co2} g/km across {stats.summary.models} models.
+        Brand average: {stats.summary.avg_co2 ?? "n/a"} g/km across {stats.summary.models} models.
         {region === "INDIA" && " India CO₂ values are estimated from mileage."}
       </p>
       <ResponsiveContainer width="100%" height={340}>
@@ -198,6 +317,45 @@ function BrandChart({ stats, region }) {
           <Bar dataKey="co2" fill="#22c55e" name="CO₂ (g/km)" />
         </BarChart>
       </ResponsiveContainer>
+    </div>
+  );
+}
+
+function CompareTable({ a, b }) {
+  const rows = [
+    ["Mileage", fmt(a.mileageKmpl, " km/l"), fmt(b.mileageKmpl, " km/l")],
+    ["CO₂ emission", fmt(a.co2GKm, " g/km"), fmt(b.co2GKm, " g/km")],
+    ["Engine", fmt(a.engineCc, " cc"), fmt(b.engineCc, " cc")],
+    ["Power", fmt(a.powerHp, " hp"), fmt(b.powerHp, " hp")],
+    ["Weight", fmt(a.weightKg, " kg"), fmt(b.weightKg, " kg")],
+    ["Fuel tank", fmt(a.fuelTankL, " L"), fmt(b.fuelTankL, " L")],
+    ["Fuel type", fmt(a.fuelType), fmt(b.fuelType)],
+    ["Category", fmt(a.category), fmt(b.category)],
+    ["Price", priceOf(a), priceOf(b)],
+  ];
+  return (
+    <div className="chart-card">
+      <h3>Side by side</h3>
+      <div className="table-wrap">
+        <table className="compare">
+          <thead>
+            <tr>
+              <th></th>
+              <th>{a.brand} {a.model}</th>
+              <th>{b.brand} {b.model}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map(([label, x, y]) => (
+              <tr key={label}>
+                <td>{label}</td>
+                <td>{x}</td>
+                <td>{y}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

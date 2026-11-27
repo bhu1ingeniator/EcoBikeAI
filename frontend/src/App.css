@@ -160,3 +160,35 @@ header { display: flex; justify-content: space-between; align-items: center; pad
 .auth-error { margin-top: 14px; padding: 10px 12px; border-radius: 10px; background: #7f1d1d; color: #fecaca; font-size: 14px; }
 .auth-submit { margin-top: 20px; width: 100%; }
 .auth-switch { text-align: center; color: var(--muted); margin-top: 22px; }
+
+.auth-google {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #dadce0;
+  border-radius: 10px;
+  background: #fff;
+  color: #3c4043;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+}
+.auth-google:hover { background: #f8f9fa; }
+.auth-divider {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 18px 0;
+  color: #80868b;
+  font-size: 13px;
+}
+.auth-divider::before,
+.auth-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #dadce0;
+}

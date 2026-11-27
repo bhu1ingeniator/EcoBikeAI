@@ -1,7 +1,9 @@
 package com.ecobike.ecobike_backend;
 
 import java.util.Map;
+import java.util.Optional;
 
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -16,61 +18,83 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final AppUserRepository users;
-    private final PasswordEncoder encoder;
+    private final PasswordEncoder passwordEncoder;
     private final JwtService jwt;
 
-    public AuthController(AppUserRepository users, PasswordEncoder encoder, JwtService jwt) {
+    public AuthController(AppUserRepository users, PasswordEncoder passwordEncoder, JwtService jwt) {
         this.users = users;
-        this.encoder = encoder;
+        this.passwordEncoder = passwordEncoder;
         this.jwt = jwt;
     }
 
-    record RegisterRequest(String name, String email, String password) {}
-    record LoginRequest(String email, String password) {}
-    record AuthResponse(String token, String name, String email) {}
+    public record RegisterRequest(String name, String email, String password) {}
+    public record LoginRequest(String email, String password) {}
 
     @PostMapping("/register")
     public ResponseEntity<?> register(@RequestBody RegisterRequest req) {
-        if (req.name() == null || req.email() == null || req.password() == null) {
-            return ResponseEntity.badRequest().body(Map.of("error", "Name, email and password are required"));
+        String name = req.name() == null ? "" : req.name().trim();
+        String email = req.email() == null ? "" : req.email().trim();
+        String password = req.password() == null ? "" : req.password();
+
+        if (name.isEmpty() || email.isEmpty() || password.length() < 8) {
+            return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                    .body(Map.of("error", "Please fill in all fields. Password must be at least 8 characters."));
         }
-        if (req.password().length() < 8) {
-            return ResponseEntity.badRequest().body(Map.of("error", "Password must be at least 8 characters"));
-        }
-        String email = req.email().trim().toLowerCase();
         if (users.existsByEmail(email)) {
-            return ResponseEntity.status(409).body(Map.of("error", "An account with this email already exists"));
+            return ResponseEntity.status(HttpStatus.CONFLICT)
+                    .body(Map.of("error", "An account with this email already exists."));
         }
 
         AppUser user = new AppUser();
-        user.setName(req.name().trim());
+        user.setName(name);
         user.setEmail(email);
-        user.setPasswordHash(encoder.encode(req.password()));
+        user.setPasswordHash(passwordEncoder.encode(password));
         users.save(user);
 
-        return ResponseEntity.ok(new AuthResponse(jwt.createToken(user), user.getName(), user.getEmail()));
+        return ResponseEntity.ok(Map.of(
+                "token", jwt.createToken(user),
+                "name", user.getName(),
+                "email", user.getEmail()
+        ));
     }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody LoginRequest req) {
-        if (req.email() == null || req.password() == null) {
-            return ResponseEntity.badRequest().body(Map.of("error", "Email and password are required"));
+        String email = req.email() == null ? "" : req.email().trim();
+        String password = req.password() == null ? "" : req.password();
+
+        Optional<AppUser> found = users.findByEmail(email);
+
+        // Google-only accounts have no password, so they cannot log in with a password
+        boolean ok = found.isPresent()
+                && found.get().getPasswordHash() != null
+                && passwordEncoder.matches(password, found.get().getPasswordHash());
+
+        if (!ok) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of("error", "Wrong email or password"));
         }
-        String email = req.email().trim().toLowerCase();
-        return users.findByEmail(email)
-                .filter(u -> encoder.matches(req.password(), u.getPasswordHash()))
-                .<ResponseEntity<?>>map(u -> ResponseEntity.ok(
-                        new AuthResponse(jwt.createToken(u), u.getName(), u.getEmail())))
-                .orElseGet(() -> ResponseEntity.status(401).body(Map.of("error", "Wrong email or password")));
+
+        AppUser user = found.get();
+        return ResponseEntity.ok(Map.of(
+                "token", jwt.createToken(user),
+                "name", user.getName(),
+                "email", user.getEmail()
+        ));
     }
 
     @GetMapping("/me")
     public ResponseEntity<?> me(Authentication auth) {
-        if (auth == null) {
-            return ResponseEntity.status(401).body(Map.of("error", "Not signed in"));
+        if (auth == null || !auth.isAuthenticated() || "anonymousUser".equals(auth.getName())) {
+            return ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                    .body(Map.of("error", "Not signed in"));
         }
         return users.findByEmail(auth.getName())
-                .<ResponseEntity<?>>map(u -> ResponseEntity.ok(Map.of("name", u.getName(), "email", u.getEmail())))
-                .orElseGet(() -> ResponseEntity.status(401).body(Map.of("error", "Not signed in")));
+                .<ResponseEntity<?>>map(u -> ResponseEntity.ok(Map.of(
+                        "name", u.getName(),
+                        "email", u.getEmail()
+                )))
+                .orElseGet(() -> ResponseEntity.status(HttpStatus.UNAUTHORIZED)
+                        .body(Map.of("error", "Not signed in")));
     }
 }

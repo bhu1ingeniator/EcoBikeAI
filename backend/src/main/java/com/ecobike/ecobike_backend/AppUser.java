@@ -5,9 +5,9 @@ import lombok.Data;
 
 import java.time.Instant;
 
+@Data
 @Entity
 @Table(name = "app_users")
-@Data
 public class AppUser {
 
     @Id
@@ -17,11 +17,15 @@ public class AppUser {
     @Column(nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    // Null for users who signed in with Google only
     private String passwordHash;
 
     @Column(nullable = false)
     private String name;
+
+    // Google's unique user id (the "sub" value); null for email/password users
+    @Column(unique = true)
+    private String googleId;
 
     private Instant createdAt = Instant.now();
 }
